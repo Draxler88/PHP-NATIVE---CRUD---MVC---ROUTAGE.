@@ -1,4 +1,3 @@
 <?php
 
-
-view('index.view.php', ['heading' => "Home page"])    ?>;
+view('index.view.php', ['heading' => "Home page"]);
