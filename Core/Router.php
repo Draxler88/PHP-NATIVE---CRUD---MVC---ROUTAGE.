@@ -44,7 +44,7 @@ class Router
             }
                 $this->abort();
     }
-    protected function abort($status = 404)
+    public static function abort($status = 404)
     {
         http_response_code($status);
         require base_path("views/partials/{$status}.php");
