@@ -28,3 +28,9 @@ function authorize($condition){
         return;
     }
 }
+
+function login($user)
+{
+    $_SESSION['user'] = $user['email'];
+    $_SESSION['id'] = $user['id'];
+}

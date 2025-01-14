@@ -44,7 +44,7 @@ $db->query('INSERT INTO users(id, nom, prenom, email, password) VALUES (null, :n
     'nom' => $nom,
     'prenom' => $prenom,
     'email' => $email,
-    'password' => $password,
+    'password' => password_hash($password, PASSWORD_BCRYPT),
 ]);
 
 $_SESSION['user'] = ['email' => $email];

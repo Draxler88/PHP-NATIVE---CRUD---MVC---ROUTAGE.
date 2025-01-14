@@ -10,7 +10,7 @@ $post = $db->query("select * from posts where id = :id", [
     "id" => $id,
 ])->fetch();
 
-$currentUser = 3;
+$currentUser = $_SESSION['id'];
 
 //authorize the value
 authorize($currentUser === $post['user_id']);
