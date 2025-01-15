@@ -29,8 +29,8 @@ function authorize($condition){
     }
 }
 
-function login($user)
+function redirect($path)
 {
-    $_SESSION['user'] = $user['email'];
-    $_SESSION['id'] = $user['id'];
+    header("location: {$path}");
+    die();
 }
