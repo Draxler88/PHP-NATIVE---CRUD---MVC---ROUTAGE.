@@ -16,7 +16,7 @@
                            class="rounded-md <?= urlIs("/contact") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" ?> px-3 py-2 text-sm font-medium ">Contact</a>
                         <a href="/about"
                            class="rounded-md <?= urlIs("/about") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-                        <?php if ($_SESSION['user'] ?? false) : ?>
+                        <?php if ($_SESSION['email'] ?? false ) : ?>
                         <a href="/notes"
                            class="rounded-md <?= urlIs("/notes") ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" ?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Notes</a>
                         <?php endif ?>
@@ -42,7 +42,7 @@
                             <button type="button"
                                     class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                <?php if ($_SESSION['user'] ?? false) : ?>
+                                <?php if ($_SESSION['email'] ?? false) : ?>
                                     <div class="flex gap-x-3">
                                         <img class="size-8 rounded-full"
                                              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -58,7 +58,7 @@
                             </button>
                         </div>
                     </div>
-                    <?php if ($_SESSION['user'] ?? false) : ?>
+                    <?php if ($_SESSION['email'] ?? false) : ?>
                         <div class="ml-3">
                             <form action="/logout" method="post">
                                 <input type="hidden" name="_method" value="DELETE">

@@ -23,27 +23,15 @@ class Authenticator
         return false;
     }
 
-    #[NoReturn] public function logout(): void
+    public function logout()
     {
-        $_SESSION = [];
-
-        session_destroy();
-
-        $params = session_get_cookie_params();
-
-        setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
-
-        header('location: /');
-        exit();
+        Session::destroy();
     }
 
     function login($user): void
     {
-        $_SESSION['user'] = [
-            'email' => $user['email'],
-            'id' => $user['id']
-        ];
-
+        Session::put('email', $user['email']);
+        Session::put('id', $user['id']);
     }
 
 }

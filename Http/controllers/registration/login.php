@@ -1,8 +1,8 @@
 <?php
-if($_SESSION['user'] ?? false){
-    header('location: /');
-    die();
-}
+
+use Core\Session;
+
+
 view('registration/login.view.php', [
-    'errors' => [],
+    'errors' => Session::get('errors'),
 ]);

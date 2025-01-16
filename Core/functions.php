@@ -1,5 +1,7 @@
 <?php
 use \Core\Router;
+use JetBrains\PhpStorm\NoReturn;
+
 function urlIs($value) {
     return $_SERVER['REQUEST_URI'] === $value ;
 }
@@ -29,8 +31,14 @@ function authorize($condition){
     }
 }
 
-function redirect($path)
+
+#[NoReturn] function redirect($path): void
 {
     header("location: {$path}");
     die();
+}
+
+function old($key, $default = '')
+{
+    return \Core\Session::get('old')[$key] ?? $default;
 }

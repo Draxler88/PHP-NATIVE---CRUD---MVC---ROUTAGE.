@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 view('registration/index.view.php', [
-    'errors' => [],
+    'errors' => Session::get('errors'),
 ]);

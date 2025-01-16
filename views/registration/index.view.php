@@ -10,8 +10,8 @@
                         <div class="sm:col-span-3">
                             <label for="nom" class="block text-sm/6 font-medium text-gray-900">First name</label>
                             <div class="mt-2">
-                                <input type="text" name="nom" id="nom" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                                <p class="text-xs text-red-500"><?= isset($errors['nom']) ? $errors['nom'] : '' ?></p>
+                                <input type="text" value="<?= old('nom') ?>" name="nom" id="nom" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                <p class="text-xs text-red-500"><?= $errors['nom'] ?? '' ?></p>
                             </div>
 
                         </div>
@@ -19,26 +19,26 @@
                         <div class="sm:col-span-3">
                             <label for="pre-nom" class="block text-sm/6 font-medium text-gray-900">Last name</label>
                             <div class="mt-2">
-                                <input type="text" name="pre-nom" id="pre-nom" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                <input type="text" name="pre-nom" value="<?= old('prenom') ?>" id="pre-nom" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                             </div>
-                            <p class="text-xs text-red-500"><?= isset($errors['prenom']) ? $errors['prenom'] : '' ?></p>
+                            <p class="text-xs text-red-500"><?= $errors['prenom'] ?? '' ?></p>
                         </div>
 
                         <div class="sm:col-span-3">
                             <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
                             <div class="mt-2">
-                                <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                <input id="email" name="email" value="<?= old('email') ?>" type="email" autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                             </div>
-                            <p class="text-xs text-red-500"><?= isset($errors['email']) ? $errors['email'] : '' ?></p>
+                            <p class="text-xs text-red-500"><?= $errors['email'] ?? '' ?></p>
                         </div>
 
 
                         <div class="sm:col-span-3">
                             <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
                             <div class="mt-2">
-                                <input type="password" name="password" id="password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                                <input type="password" name="password" value="<?= $_POST['password'] ?? '' ?>" id="password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                             </div>
-                            <p class="text-xs text-red-500"><?= isset($errors['password']) ? $errors['password'] : '' ?></p>
+                            <p class="text-xs text-red-500"><?= $errors['password'] ?? '' ?></p>
                         </div>
                     </div>
                 </div>

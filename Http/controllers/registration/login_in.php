@@ -1,6 +1,7 @@
 <?php
 
 use Core\Authenticator;
+use Core\Session;
 use Http\Forms\LoginForm;
 
 $email = $_POST['email'];
@@ -13,14 +14,13 @@ if ($form->validate($email, $password)) {
         redirect('/');
     }
     $form->error('login', 'email or password incorrect');
-
 };
 
-view('registration/login.view.php', [
-    'errors' => $form->errors(),
+Session::flash('errors', $form->errors());
+Session::put('old', [
+    'email' => $email,
 ]);
-return;
-
+redirect('/login');
 
 
 
